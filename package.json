@@ -2,8 +2,17 @@
   "name": "slidev-theme-excalidraw",
   "version": "0.1.0",
   "description": "A Slidev theme that looks like the deck was drawn in Excalidraw",
-  "author": "Nuruzzaman Milon",
+  "author": "Nuruzzaman Milon<contact@milon.im>",
   "license": "MIT",
+  "homepage": "https://milon.im",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/milonim/slidev-theme-excalidraw"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "type": "module",
   "keywords": [
     "slidev-theme",

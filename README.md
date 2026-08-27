@@ -124,6 +124,20 @@ npm run dev
 `slides.md` uses `theme: ./` so you are previewing this package, not a published
 copy.
 
+## Releasing
+
+A GitHub Actions workflow publishes to npm whenever you **publish a GitHub
+Release**. The tag must match `package.json` (`v0.1.1` for version `0.1.1`).
+
+1. Bump `"version"` in `package.json` and push.
+2. On GitHub: **Releases → Draft a new release**, tag `vX.Y.Z`, publish.
+3. The [publish workflow](.github/workflows/publish.yml) runs `npm publish`.
+
+One-time setup: create an npm
+[Automation access token](https://docs.npmjs.com/creating-and-viewing-access-tokens)
+and add it as the repository secret `NPM_TOKEN`
+(Settings → Secrets and variables → Actions).
+
 ## Fonts
 
 Virgil, Nunito, and Cascadia Code are bundled with the theme (same files
