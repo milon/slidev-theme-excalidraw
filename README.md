@@ -126,12 +126,22 @@ copy.
 
 ## Releasing
 
-A GitHub Actions workflow publishes to npm whenever you **publish a GitHub
-Release**. The tag must match `package.json` (`v1.0.0` for version `1.0.0`).
+A GitHub Actions workflow publishes to npm when you **push a version tag**. The
+tag must match `package.json` (`v1.0.0` for version `1.0.0`).
 
-1. Bump `"version"` in `package.json` and push to `master`.
-2. On GitHub: **Releases → Draft a new release**, create tag `vX.Y.Z`, publish.
-3. The [publish workflow](.github/workflows/publish.yml) runs `npm publish`.
+```bash
+# bump "version" in package.json, then:
+git add package.json package-lock.json
+git commit -m "Release v1.0.0"
+git tag v1.0.0
+git push origin master --tags
+```
+
+The [publish workflow](.github/workflows/publish.yml) runs `npm publish`.
+
+One-time: on npm, add a GitHub Actions
+[trusted publisher](https://docs.npmjs.com/trusted-publishers/) for this repo
+with workflow filename `publish.yml`. No `NPM_TOKEN` secret is needed.
 
 ## Fonts
 
