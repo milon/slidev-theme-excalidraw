@@ -35,13 +35,14 @@
     "dev": "slidev slides.md --open",
     "build": "slidev build slides.md",
     "export": "slidev export slides.md",
-    "screenshot": "slidev export slides.md --format png"
+    "screenshot": "slidev export slides.md --format png --output screenshots --scale 1.5 --wait 800"
   },
   "dependencies": {
     "roughjs": "^4.6.6"
   },
   "devDependencies": {
     "@slidev/cli": "^52.1.0",
-    "@slidev/types": "^52.1.0"
+    "@slidev/types": "^52.1.0",
+    "playwright-chromium": "^1.62.1"
   }
 }

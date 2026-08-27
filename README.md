@@ -4,6 +4,8 @@ A [Slidev](https://sli.dev) theme that makes a deck look like it was drawn in
 Excalidraw: real hand-drawn strokes (roughjs), Excalidraw's own fonts, the
 squared canvas, and a decorative copy of the Excalidraw UI chrome.
 
+![Cover slide with a hand-drawn title, masking tape and collaborator cursors](./screenshots/cover.png)
+
 ## Install
 
 Add the theme to your slides frontmatter. Slidev will prompt you to install it
@@ -34,6 +36,26 @@ colorSchema: light
 
 The package name is `slidev-theme-excalidraw`; Slidev resolves `theme: excalidraw`
 to that name automatically.
+
+## Screenshots
+
+Sketchy containers and arrows, drawn with roughjs so every shape is a real
+stroke rather than an image:
+
+![Rectangle, ellipse and dashed roughjs boxes joined by a hand-drawn arrow](./screenshots/sketchy-boxes.png)
+
+Sticky notes in the Excalidraw palette:
+
+![Four tilted sticky notes in yellow, blue, green and red](./screenshots/sticky-notes.png)
+
+Mermaid diagrams pick up the `handDrawn` look automatically:
+
+![Mermaid flowchart rendered with hand-drawn edges and yellow nodes](./screenshots/diagrams.png)
+
+Code blocks sit in a wobbly frame, and inline code gets a strip of highlighter
+tape:
+
+![Code slide with a hand-drawn frame around a TypeScript snippet](./screenshots/code.png)
 
 ## Layouts
 
@@ -84,6 +106,8 @@ Slidev's built-in `v-mark` already uses rough-notation, so it matches:
 <span v-mark.underline.blue="2">decision</span>
 <span v-mark.highlight.yellow="3">takeaway</span>
 ```
+
+![Slide showing circled, underlined, highlighted and struck-through text](./screenshots/marker-pen.png)
 
 ## CSS helpers
 
