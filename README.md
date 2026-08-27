@@ -137,7 +137,8 @@ git tag v1.0.0
 git push origin master --tags
 ```
 
-The [publish workflow](.github/workflows/publish.yml) runs `npm publish`.
+The [publish workflow](.github/workflows/publish.yml) runs `npm publish` and
+creates a GitHub Release for that tag.
 
 One-time: on npm, add a GitHub Actions
 [trusted publisher](https://docs.npmjs.com/trusted-publishers/) for this repo
