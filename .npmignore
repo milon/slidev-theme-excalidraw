@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.slidev/
+*.pdf
+*.png
+slides.md
+package-lock.json

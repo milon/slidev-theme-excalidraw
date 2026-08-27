@@ -1,0 +1,49 @@
+/* Code looks like a pasted snippet on the whiteboard. */
+
+.slidev-layout .slidev-code,
+.slidev-layout pre.shiki {
+  font-family: "Excalidraw Code", ui-monospace, "SFMono-Regular", monospace;
+  font-size: 0.85em;
+  line-height: 1.55;
+  background: #fbfbf9 !important;
+  color: var(--exc-ink);
+  border: 2px solid rgba(30, 30, 30, 0.75);
+  border-radius: 255px 12px 225px 12px / 12px 225px 12px 255px;
+  padding: 1rem 1.2rem;
+  box-shadow: 2px 3px 0 rgba(30, 30, 30, 0.09);
+}
+
+/* A strip of yellow tape stuck over the word: translucent, square torn edges,
+   a slight tilt and a soft shadow where it lifts off the canvas.
+   `inline-block` is what lets the tilt apply at all. */
+.slidev-layout :not(pre) > code {
+  font-family: "Excalidraw Code", ui-monospace, monospace;
+  font-size: 0.88em;
+  color: var(--exc-ink);
+  display: inline-block;
+  /* Kept short vertically: in tightly stacked lines the tilted corners of two
+     strips would otherwise almost touch. */
+  padding: 0.02em 0.42em;
+  line-height: 1.35;
+  border-radius: 1px;
+  border-left: 1px dashed rgba(30, 30, 30, 0.2);
+  border-right: 1px dashed rgba(30, 30, 30, 0.2);
+  background: linear-gradient(
+    170deg,
+    rgba(255, 246, 199, 0.88) 0%,
+    rgba(255, 236, 153, 0.8) 48%,
+    rgba(249, 222, 124, 0.86) 100%
+  );
+  box-shadow: 0 1px 1.5px rgba(30, 30, 30, 0.14);
+  transform: rotate(-0.6deg);
+}
+
+/* Alternate the tilt so a run of tape strips does not look printed. */
+.slidev-layout li:nth-child(even) :not(pre) > code,
+.slidev-layout tr:nth-child(even) :not(pre) > code {
+  transform: rotate(0.5deg);
+}
+
+.slidev-layout .slidev-code .line.highlighted {
+  background: rgba(255, 236, 153, 0.55);
+}

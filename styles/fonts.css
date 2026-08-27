@@ -1,0 +1,26 @@
+/* Fonts shipped with Excalidraw itself. Bundled via relative URLs so they
+   work both in this demo deck and when the theme is installed from npm. */
+
+@font-face {
+  font-family: "Virgil";
+  src: url("./fonts/Virgil-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Excalidraw Code";
+  src: url("./fonts/CascadiaCode-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Excalidraw Normal";
+  src: url("./fonts/Nunito-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,260 @@
+:root {
+  --exc-canvas: #ffffff;
+  --exc-ink: #1e1e1e;
+  --exc-muted: #5c5c5c;
+
+  --exc-blue: #1971c2;
+  --exc-blue-bg: #a5d8ff;
+  --exc-red: #e03131;
+  --exc-red-bg: #ffc9c9;
+  --exc-green: #2f9e44;
+  --exc-green-bg: #b2f2bb;
+  --exc-yellow: #f08c00;
+  --exc-yellow-bg: #ffec99;
+  --exc-violet: #6741d9;
+  --exc-violet-bg: #d0bfff;
+
+  --exc-grid-line: rgba(0, 0, 0, 0.055);
+  --exc-grid-size: 20px;
+}
+
+html,
+body,
+#app {
+  background: var(--exc-canvas);
+}
+
+/* ---------- the canvas ---------- */
+
+.slidev-layout {
+  --uno: px-14;
+  /* Top padding clears the decorative toolbar island. */
+  padding-top: 4.4rem;
+  padding-bottom: 2.6rem;
+  font-family: "Excalidraw Normal", "Virgil", ui-sans-serif, system-ui, sans-serif;
+  color: var(--exc-ink);
+  background-color: var(--exc-canvas);
+  background-image:
+    linear-gradient(var(--exc-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--exc-grid-line) 1px, transparent 1px);
+  background-size: var(--exc-grid-size) var(--exc-grid-size);
+}
+
+/* Opt out per slide with `class: no-grid` */
+.slidev-layout.no-grid {
+  background-image: none;
+}
+
+/* Use on information-dense slides with long tables or two columns. */
+.slidev-layout.compact h1 {
+  font-size: 2.7rem;
+  margin-bottom: 1rem;
+}
+
+.slidev-layout.compact table {
+  font-size: 0.86em;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.slidev-layout.compact th,
+.slidev-layout.compact td {
+  padding: 0.38rem 0.7rem;
+}
+
+/* Dotted paper instead of squared, with `class: dots` */
+.slidev-layout.dots {
+  background-image: radial-gradient(var(--exc-grid-line) 1.5px, transparent 1.5px);
+}
+
+/* ---------- handwriting ---------- */
+
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3,
+.slidev-layout h4,
+.slidev-layout h5,
+.slidev-layout h6 {
+  font-family: "Virgil", "Excalidraw Normal", cursive;
+  font-weight: 400;
+  color: var(--exc-ink);
+  letter-spacing: 0.01em;
+}
+
+.slidev-layout h1 {
+  --uno: text-5xl leading-tight mb-6;
+  position: relative;
+  display: inline-block;
+}
+
+/* wobbly hand-drawn underline under every h1 */
+.slidev-layout h1::after {
+  content: "";
+  position: absolute;
+  left: -0.15em;
+  right: -0.35em;
+  bottom: -0.34em;
+  height: 0.28em;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 12' preserveAspectRatio='none'><path d='M3 8.5 C 58 3.2, 104 10.8, 156 5.9 S 252 3.6, 297 8.2' fill='none' stroke='%231971c2' stroke-width='2.6' stroke-linecap='round'/></svg>");
+}
+
+.slidev-layout h1.plain::after {
+  display: none;
+}
+
+.slidev-layout h2 {
+  --uno: text-3xl mb-4;
+}
+
+.slidev-layout h3 {
+  --uno: text-2xl mb-3;
+}
+
+.slidev-layout p,
+.slidev-layout li {
+  --uno: leading-relaxed;
+}
+
+.slidev-layout strong,
+.slidev-layout b {
+  font-family: "Virgil", cursive;
+  font-weight: 400;
+  color: var(--exc-ink);
+}
+
+.slidev-layout a {
+  color: var(--exc-blue);
+  text-decoration-color: var(--exc-blue-bg);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* ---------- lists with hand-drawn bullets ---------- */
+
+.slidev-layout ul {
+  list-style: none;
+  padding-left: 1.4em;
+}
+
+.slidev-layout ul > li {
+  position: relative;
+  margin: 0.35em 0;
+}
+
+.slidev-layout ul > li::before {
+  content: "";
+  position: absolute;
+  left: -1.15em;
+  top: 0.62em;
+  width: 0.62em;
+  height: 0.42em;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 12'><path d='M2 7.5 C 6 4, 13 9, 18 4.5' fill='none' stroke='%231e1e1e' stroke-width='2.4' stroke-linecap='round'/></svg>");
+}
+
+.slidev-layout ol {
+  padding-left: 1.4em;
+}
+
+.slidev-layout ol > li::marker {
+  font-family: "Virgil", cursive;
+  color: var(--exc-violet);
+}
+
+/* ---------- sketchy containers ---------- */
+
+/* The classic uneven-radius trick: a border that reads as hand-drawn. */
+.sketch,
+.slidev-layout blockquote,
+.slidev-layout table {
+  border: 2px solid var(--exc-ink);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.slidev-layout blockquote {
+  --uno: px-6 py-4 my-4;
+  border-color: var(--exc-violet);
+  font-family: "Virgil", cursive;
+  color: var(--exc-ink);
+}
+
+.slidev-layout blockquote p {
+  margin: 0;
+}
+
+/* ---------- tables ---------- */
+
+/* `separate` rather than `collapse`, otherwise the wobbly outer border is
+   collapsed away by the cell borders. */
+.slidev-layout table {
+  --uno: my-4 w-full;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+}
+
+.slidev-layout th,
+.slidev-layout td {
+  --uno: px-3 py-2 text-left;
+  border-bottom: 1.5px dashed rgba(30, 30, 30, 0.28);
+}
+
+.slidev-layout th {
+  font-family: "Virgil", cursive;
+  font-weight: 400;
+  color: var(--exc-blue);
+  border-bottom: 2px solid rgba(30, 30, 30, 0.55);
+}
+
+.slidev-layout tr:last-child td {
+  border-bottom: none;
+}
+
+/* ---------- rule ---------- */
+
+.slidev-layout hr {
+  border: none;
+  height: 10px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 10' preserveAspectRatio='none'><path d='M2 6 C 70 2, 120 9, 180 4 S 262 3, 298 7' fill='none' stroke='%231e1e1e' stroke-width='2' stroke-linecap='round' opacity='0.55'/></svg>");
+}
+
+/* ---------- ink colour helpers ---------- */
+
+.ink-blue { color: var(--exc-blue); }
+.ink-red { color: var(--exc-red); }
+.ink-green { color: var(--exc-green); }
+.ink-yellow { color: var(--exc-yellow); }
+.ink-violet { color: var(--exc-violet); }
+.ink-muted { color: var(--exc-muted); }
+
+.hl-blue { background: var(--exc-blue-bg); }
+.hl-red { background: var(--exc-red-bg); }
+.hl-green { background: var(--exc-green-bg); }
+.hl-yellow { background: var(--exc-yellow-bg); }
+.hl-violet { background: var(--exc-violet-bg); }
+
+.handwritten {
+  font-family: "Virgil", cursive;
+}
+
+/* Slight paper-tilt for anything you want to look "placed by hand" */
+.tilt-l { transform: rotate(-1.6deg); }
+.tilt-r { transform: rotate(1.4deg); }
+
+/* ---------- mermaid ---------- */
+
+.slidev-layout .mermaid {
+  font-family: "Virgil", cursive !important;
+  display: flex;
+  justify-content: center;
+}
+
+.slidev-layout .mermaid svg {
+  max-width: 100%;
+}
