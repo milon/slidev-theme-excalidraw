@@ -7,11 +7,13 @@
   "homepage": "https://milon.im",
   "repository": {
     "type": "git",
-    "url": "https://github.com/milonim/slidev-theme-excalidraw"
+    "url": "git+https://github.com/milon/slidev-theme-excalidraw.git"
+  },
+  "bugs": {
+    "url": "https://github.com/milon/slidev-theme-excalidraw/issues"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "public"
   },
   "type": "module",
   "keywords": [
